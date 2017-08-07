@@ -1,0 +1,48 @@
+{
+    "logfile": "D:\\test\\Script\\Infa_DevOps\\ipc_backup.ps1.log",
+    "email": {
+        "from": "Informatica_backup@agroterra.ru",
+        "to": "Aleksey.Rogusskiy@agroterra.ru",
+        "smtp": "exchange.mow.ru",
+        "subject": "Informatica Backup report"
+    },
+    "infa_repository": [
+        {
+            "name": "PC_RS",
+            "script": "D:\\test\\Script\\Infa_DevOps\\batch\\backup_repository_PC_RS.bat"
+        },
+        {
+            "name": "RS_DWH",
+            "script": "D:\\test\\Script\\Infa_DevOps\\batch\\backup_repository_RS_DWH.bat"
+        }
+    ],
+    "infa_domain": [
+        {
+            "name": "Dev",
+            "script": "D:\\test\\Script\\Infa_DevOps\\batch\\backup_domain_Dev.bat"
+        }
+    ],
+    "dbs": [
+        {
+            "db_name": "develop",
+            "pass_file": "D:\\test\\Script\\Infa_DevOps\\enc_passwd-informatica-repos.txt",
+            "user": "informatica-repos",
+            "query_file": "D:\\test\\Script\\Infa_DevOps\\sql\\db_backup_query_develop.sql",
+            "instance": "DCN-NT-APP26"
+        },
+        {
+            "db_name": "RS_DWH",
+            "user": "informatica-repos",
+            "pass_file": "D:\\test\\Script\\Infa_DevOps\\enc_passwd-informatica-repos.txt",
+            "query_file": "D:\\test\\Script\\Infa_DevOps\\sql\\db_backup_query_RS_DWH.sql",
+            "instance": "DCN-NT-APP26"
+        },
+        {
+            "db_name": "service",
+            "user": "dwh_tmd_admin",
+            "pass_file": "D:\\test\\Script\\Infa_DevOps\\enc_passwd-dwh_tmd_admin.txt",
+            "query_file": "D:\\test\\Script\\Infa_DevOps\\sql\\db_backup_query_service.sql",
+            "instance": "MSSQL02"
+        }
+    ]
+}
